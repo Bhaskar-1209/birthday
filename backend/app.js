@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 7070;
 const SPECIAL_KEY = process.env.SPECIAL_KEY;
 
 // Middleware
-app.use(cors({ origin: 'https://laado-birthday.netlify.app/' }));
+app.use(cors());
 app.use(express.json());
 
 // Routes
