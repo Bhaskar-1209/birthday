@@ -5,6 +5,7 @@ import { Sparkles } from 'lucide-react';
 const Login = ({ onSuccess }) => {
   const [keyword, setKeyword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
     if (!keyword.trim()) {
@@ -12,6 +13,8 @@ const Login = ({ onSuccess }) => {
       return;
     }
 
+    setLoading(true);
+    setError('');
     try {
       const res = await axios.post('https://birthday-y5nz.onrender.com/api/auth/keyword-check', { keyword });
       if (res.data.success) {
@@ -21,6 +24,8 @@ const Login = ({ onSuccess }) => {
       }
     } catch (err) {
       setError('Error connecting to server 🚫');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,9 +59,12 @@ const Login = ({ onSuccess }) => {
 
         <button
           onClick={handleLogin}
-          className="bg-gradient-to-r from-pink-400 to-red-400 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
+          disabled={loading}
+          className={`bg-gradient-to-r from-pink-400 to-red-400 text-white px-6 py-2 rounded-full shadow-md transition-transform ${
+            loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'
+          }`}
         >
-          💝 Unlock Surprise
+          {loading ? '🔒 Checking...' : '💝 Unlock Surprise'}
         </button>
 
         {error && <p className="text-red-500 mt-3">{error}</p>}
