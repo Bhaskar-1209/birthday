@@ -100,7 +100,7 @@ export default function MirrorOfMemories() {
           onClick={goToPrevious}
           className="absolute left-2 z-30 text-4xl text-pink-300 hover:text-pink-500 transition-all"
         >
-          <MdArrowBackIosNew />
+           🐼
         </button>
 
         <div className="relative w-full h-full">
@@ -146,11 +146,11 @@ export default function MirrorOfMemories() {
           onClick={goToNext}
           className="absolute right-2 z-30 text-4xl text-pink-300 hover:text-pink-500 transition-all"
         >
-          <MdArrowForwardIos />
+        🐢
         </button>
       </div>
 
-      <p className="mt-10 text-xl font-medium text-center max-w-xl">
+      <p className="mt-2text-xl font-medium text-center max-w-xl">
         {images[currentIndex].caption}
       </p>
 
@@ -160,17 +160,6 @@ export default function MirrorOfMemories() {
       >
         🎁 Click to Reveal Birthday Surprise
       </button>
-
-      <div className="absolute bottom-6 left-6 text-pink-400 text-2xl animate-pulse">
-        🐼
-      </div>
-      <div className="absolute bottom-6 right-6 text-pink-400 text-2xl animate-pulse">
-        🐢
-      </div>
-
-      <audio autoPlay loop>
-        <source src="/audio/love-theme.mp3" type="audio/mpeg" />
-      </audio>
     </div>
   );
 }
