@@ -54,7 +54,7 @@ const Login = ({ onSuccess }) => {
           onChange={(e) => setKeyword(e.target.value)}
           onKeyDown={handleKeyDown}
           className="border-2 border-pink-300 p-2 rounded-lg w-full mb-4 focus:outline-none focus:ring-2 focus:ring-pink-400 text-center"
-          placeholder="Her cute nickname or secret"
+          placeholder="Her cute nickname or secret(small charcters only)"
         />
 
         <button
