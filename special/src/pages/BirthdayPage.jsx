@@ -12,7 +12,7 @@ You are the light of my life and the reason behind my smile every day.
 Here's to your dreams, laughter, and all the joy in the world — because you deserve nothing less.
 
 With all my heart,
-— Bhaskar 💖
+— Bhaskar 🐼
 `;
 
   return (
